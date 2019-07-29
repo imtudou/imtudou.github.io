@@ -5,7 +5,7 @@
 # Site
 title: TUDOUBLOG
 subtitle:
-description:
+description: 站在巨人的肩膀上！
 keywords:
 author: imtudou
 language: zh-CN
@@ -82,7 +82,7 @@ theme: NexT
 deploy:
  type: git
  repo: git@github.com:imtudou/imtudou.github.io.git
- branch: publish
+ branch: master
 
 # 配置搜索
 ## https://github.com/theme-next/hexo-generator-searchdb

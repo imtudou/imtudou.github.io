@@ -593,7 +593,7 @@ calendar:
 
 # Disqus
 disqus:
-  enable: false
+  enable: true
   shortname:
   count: true
   lazyload: false
@@ -641,7 +641,7 @@ livere_uid: # <your_uid>
 
 # Gitalk
 # Demo: https://gitalk.github.io
-gitalk:
+gitalk: 
   enable: true
   github_id: imtudou # GitHub repo owner
   repo: imtudou.github.io.gitalk # Repository name to store issues
@@ -681,6 +681,7 @@ likely:
     telegram: Send
     whatsapp: Send
     pinterest: Pin
+   
 
 # NeedMoreShare2
 # Dependencies: https://github.com/theme-next/theme-next-needmoreshare2
@@ -695,16 +696,16 @@ needmoreshare2:
   postbottom:
     enable: true
     options:
-      iconStyle: box
+      iconStyle: default
       boxForm: horizontal
-      position: bottomCenter
+      position: Right
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
   float:
     enable: false
     options:
       iconStyle: box
       boxForm: horizontal
-      position: middleRight
+      position: middleRight 
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
 
 
@@ -714,7 +715,7 @@ needmoreshare2:
 # ---------------------------------------------------------------
 
 # Baidu Analytics
-baidu_analytics: # <app_id>
+baidu_analytics: 39d65a723bc42f98cd7374c7e0a17c0a # <app_id>
 
 # Growingio Analytics
 # Copyright 2015-2018 GrowingIO, Inc. More info available at https://www.growingio.com
@@ -1137,12 +1138,12 @@ vendors:
   # gitalk & js-md5
   # See: https://github.com/gitalk/gitalk, https://github.com/emn178/js-md5
   # Example:
-  # gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
-  # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
-  # md5: //cdn.jsdelivr.net/npm/js-md5@0/src/md5.min.js
-  gitalk_js:
-  gitalk_css:
-  md5:
+  gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
+  gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
+  md5: //cdn.jsdelivr.net/npm/js-md5@0/src/md5.min.js
+  # gitalk_js:
+  # gitalk_css:
+  # md5:
 
   # likely
   # See: https://github.com/ilyabirman/Likely
