@@ -1,5 +1,5 @@
 ---
-title: "(七):Vue.js - 使用mui的\tab-top-webview-main完成分类滑动栏"
+title: "(七):Vue.js - 使用mui的tab-top-webview-main完成分类滑动栏"
 date: 2019-08-09 13:01:47
 tags: vue
 categories: Vue系列学习笔记
@@ -10,7 +10,7 @@ categories: Vue系列学习笔记
 
 ### 兼容问题
 1. 和 App.vue 中的 `router-link` 身上的类名 `mui-tab-item` 存在兼容性问题，导致tab栏失效，可以把`mui-tab-item`改名为`mui-tab-item1`，并复制相关的类样式，来解决这个问题；
-```
+```css
     .mui-bar-tab .mui-tab-item1.mui-active {
       color: #007aff;
     }
@@ -48,7 +48,7 @@ categories: Vue系列学习笔记
  import mui from '../../../lib/mui/js/mui.min.js'
  ```
  + 在 组件的 `mounted` 事件钩子中，注册 mui 的滚动事件：
- ```
+ ```js
  	mounted() {
     	// 需要在组件的 mounted 事件钩子中，注册 mui 的 scroll 滚动事件
         mui('.mui-scroll-wrapper').scroll({

@@ -16,7 +16,7 @@ categories: Vue系列学习笔记
 
 [filterBy - 指令](https://v1-cn.vuejs.org/api/#filterBy)
 
-```
+```html
 
 <tr v-for="item in list | filterBy searchName in 'name'">
 
@@ -40,7 +40,7 @@ categories: Vue系列学习笔记
 
 + 筛选框绑定到 VM 实例中的 `searchName` 属性：
 
-```
+```html
 
 <hr> 输入筛选名称：
 
@@ -50,7 +50,7 @@ categories: Vue系列学习笔记
 
 + 在使用 `v-for` 指令循环每一行数据的时候，不再直接 `item in list`，而是 `in` 一个 过滤的methods 方法，同时，把过滤条件`searchName`传递进去：
 
-```
+```html
 
 <tbody>
 
@@ -76,7 +76,7 @@ categories: Vue系列学习笔记
 
 + `search` 过滤方法中，使用 数组的 `filter` 方法进行过滤：
 
-```
+```JS
 
 search(name) {
 
@@ -102,7 +102,7 @@ search(name) {
 
 1. HTML元素：
 
-```
+```html
 
 <td>{{item.ctime | dataFormat('yyyy-mm-dd')}}</td>
 
@@ -110,7 +110,7 @@ search(name) {
 
 2. 私有 `filters` 定义方式：
 
-```
+```js
 
 filters: { // 私有局部过滤器，只能在 当前 VM 对象所控制的 View 区域进行使用
 
@@ -168,7 +168,7 @@ filters: { // 私有局部过滤器，只能在 当前 VM 对象所控制的 Vie
 
 ### 全局过滤器
 
-```
+```js
 
 // 定义一个全局过滤器
 
@@ -224,7 +224,7 @@ Vue.filter('dataFormat', function (input, pattern = '') {
 
 ### 1.x中自定义键盘修饰符【了解即可】
 
-```
+```js
 
 Vue.directive('on').keyCodes.f2 = 113;
 
@@ -234,7 +234,7 @@ Vue.directive('on').keyCodes.f2 = 113;
 
 1. 通过`Vue.config.keyCodes.名称 = 按键值`来自定义案件修饰符的别名：
 
-```
+```js
 
 Vue.config.keyCodes.f2 = 113;
 
@@ -242,7 +242,7 @@ Vue.config.keyCodes.f2 = 113;
 
 2. 使用自定义的按键修饰符：
 
-```
+```html
 
 <input type="text" v-model="name" @keyup.f2="add">
 
@@ -256,7 +256,7 @@ Vue.config.keyCodes.f2 = 113;
 
 1. 自定义全局和局部的 自定义指令：
 
-```
+```js
 
     // 自定义全局指令 v-focus，为绑定的元素自动获取焦点：
 
@@ -298,7 +298,7 @@ Vue.config.keyCodes.f2 = 113;
 
 2. 自定义指令的使用方式：
 
-```
+```html
 
 <input type="text" v-model="searchName" v-focus v-color="'red'" v-font-weight="900">
 
@@ -307,7 +307,7 @@ Vue.config.keyCodes.f2 = 113;
 
 
 ## Vue 1.x 中 自定义元素指令【已废弃,了解即可】
-```
+```js
 Vue.elementDirective('red-color', {
   bind: function () {
     this.el.style.color = 'red';
@@ -355,7 +355,7 @@ Vue.elementDirective('red-color', {
  	- 服务器数据接口组织好要发送给客户端的数据，再拿着客户端传递过来的回调方法名称，拼接出一个调用这个方法的字符串，发送给客户端去解析执行；
  	- 客户端拿到服务器返回的字符串之后，当作Script脚本去解析执行，这样就能够拿到JSONP的数据了；
  + 带大家通过 Node.js ，来手动实现一个JSONP的请求例子；
- ```
+ ```js
     const http = require('http');
     // 导入解析 URL 地址的核心模块
     const urlModule = require('url');
@@ -396,7 +396,7 @@ Vue.elementDirective('red-color', {
  + 直接在页面中，通过`script`标签，引入 `vue-resource` 的脚本文件；
  + 注意：引用的先后顺序是：先引用 `Vue` 的脚本文件，再引用 `vue-resource` 的脚本文件；
 6. 发送get请求：
-```
+```js
 getInfo() { // get 方式获取数据
   this.$http.get('http://127.0.0.1:8899/api/getlunbo').then(res => {
     console.log(res.body);
@@ -404,7 +404,7 @@ getInfo() { // get 方式获取数据
 }
 ```
 7. 发送post请求：
-```
+```js
 postInfo() {
   var url = 'http://127.0.0.1:8899/api/post';
   // post 方法接收三个参数：
@@ -417,7 +417,7 @@ postInfo() {
 }
 ```
 8. 发送JSONP请求获取数据：
-```
+```js
 jsonpInfo() { // JSONP形式从服务器获取数据
   var url = 'http://127.0.0.1:8899/api/jsonp';
   this.$http.jsonp(url).then(res => {
@@ -447,7 +447,7 @@ jsonpInfo() { // JSONP形式从服务器获取数据
 
 ### 使用过渡类名
 1. HTML结构：
-```
+```html
 <div id="app">
     <input type="button" value="动起来" @click="myAnimate">
     <!-- 使用 transition 将需要过渡的元素包裹起来 -->
@@ -457,7 +457,7 @@ jsonpInfo() { // JSONP形式从服务器获取数据
   </div>
 ```
 2. VM 实例：
-```
+```js
 // 创建 Vue 实例，得到 ViewModel
 var vm = new Vue({
   el: '#app',
@@ -472,7 +472,7 @@ var vm = new Vue({
 });
 ```
 3. 定义两组类样式：
-```
+```js
 /* 定义进入和离开时候的过渡状态 */
     .fade-enter-active,
     .fade-leave-active {
@@ -490,11 +490,11 @@ var vm = new Vue({
 
 ### [使用第三方 CSS 动画库](https://cn.vuejs.org/v2/guide/transitions.html#自定义过渡类名)
 1. 导入动画类库：
-```
+```html
 <link rel="stylesheet" type="text/css" href="./lib/animate.css">
 ```
 2. 定义 transition 及属性：
-```
+```html
 <transition
 	enter-active-class="fadeInRight"
     leave-active-class="fadeOutRight"
@@ -505,7 +505,7 @@ var vm = new Vue({
 
 ### 使用动画钩子函数
 1. 定义 transition 组件以及三个钩子函数：
-```
+```html
 <div id="app">
     <input type="button" value="切换动画" @click="isshow = !isshow">
     <transition
@@ -517,7 +517,7 @@ var vm = new Vue({
   </div>
 ```
 2. 定义三个 methods 钩子方法：
-```
+```js
 methods: {
         beforeEnter(el) { // 动画进入之前的回调
           el.style.transform = 'translateX(500px)';
@@ -533,7 +533,7 @@ methods: {
       }
 ```
 3. 定义动画过渡时长和样式：
-```
+```css
 .show{
       transition: all 0.4s ease;
     }
@@ -542,7 +542,7 @@ methods: {
 
 ### [v-for 的列表过渡](https://cn.vuejs.org/v2/guide/transitions.html#列表的进入和离开过渡)
 1. 定义过渡样式：
-```
+```css
 <style>
     .list-enter,
     .list-leave-to {
@@ -557,7 +557,7 @@ methods: {
 </style>
 ```
 2. 定义DOM结构，其中，需要使用 transition-group 组件把v-for循环的列表包裹起来：
-```
+```html
   <div id="app">
     <input type="text" v-model="txt" @keyup.enter="add">
 
@@ -567,7 +567,7 @@ methods: {
   </div>
 ```
 3. 定义 VM中的结构：
-```
+```js
     // 创建 Vue 实例，得到 ViewModel
     var vm = new Vue({
       el: '#app',
@@ -588,7 +588,7 @@ methods: {
 ### 列表的排序过渡
 `<transition-group>` 组件还有一个特殊之处。不仅可以进入和离开动画，**还可以改变定位**。要使用这个新功能只需了解新增的 `v-move` 特性，**它会在元素的改变定位的过程中应用**。
 + `v-move` 和 `v-leave-active` 结合使用，能够让列表的过渡更加平缓柔和：
-```
+```css
 .v-move{
   transition: all 0.8s ease;
 }

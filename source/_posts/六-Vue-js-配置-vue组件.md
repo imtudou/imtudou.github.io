@@ -26,7 +26,7 @@ categories: Vue系列学习笔记
 
 4. 在`webpack.config.js`中，添加如下`module`规则：
 
-```
+```js
 
 module: {
 
@@ -44,7 +44,7 @@ module: {
 
 5. 创建`App.js`组件页面：
 
-```
+```html
 
     <template>
 
@@ -98,7 +98,7 @@ module: {
 
 6. 创建`main.js`入口文件：
 
-```
+```js
 
     // 导入 Vue 组件
 
@@ -126,7 +126,7 @@ module: {
 
 ## 在使用webpack构建的Vue项目中使用模板对象？
 1. 在`webpack.config.js`中添加`resolve`属性：
-```
+```js
 resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
@@ -178,7 +178,7 @@ import register from './components/account/register.vue'
 
 4. 创建路由对象:
 
-```
+```js
 
 var router = new VueRouter({
 
@@ -198,7 +198,7 @@ var router = new VueRouter({
 
 5. 将路由对象，挂载到 Vue 实例上:
 
-```
+```js
 
 var vm = new Vue({
 
@@ -220,7 +220,7 @@ var vm = new Vue({
 
 6. 改造App.vue组件，在 template 中，添加`router-link`和`router-view`：
 
-```
+```html
 
     <router-link to="/login">登录</router-link>
 
@@ -266,7 +266,7 @@ import 'mint-ui/lib/style.css'
 
 3. 在 vue 中使用 MintUI：
 
-```
+```js
 
 Vue.use(MintUI)
 
@@ -274,7 +274,7 @@ Vue.use(MintUI)
 
 4. 使用的例子：
 
-```
+```html
 
 <mt-button type="primary" size="large">primary</mt-button>
 
@@ -342,7 +342,7 @@ import '../lib/mui/css/mui.min.css'
 
  + 全局设置样式如下：
 
- ```
+ ```js
 
  	.router-link-active{
 
@@ -354,7 +354,7 @@ import '../lib/mui/css/mui.min.css'
 
  + 或者在 `new VueRouter` 的时候，通过 `linkActiveClass` 来指定高亮的类：
 
- ```
+ ```js
 
  	// 创建路由对象
 
@@ -380,7 +380,7 @@ import '../lib/mui/css/mui.min.css'
 
 2. 在入口文件中导入需要展示的组件，并创建路由对象：
 
-```
+```js
 
     // 导入需要展示的组件
 
@@ -424,7 +424,7 @@ import '../lib/mui/css/mui.min.css'
 
 1. 假数据：
 
-```
+```js
 
 lunbo: [
 
@@ -440,7 +440,7 @@ lunbo: [
 
 2. 引入轮播图组件：
 
-```
+```html
 
 <!-- Mint-UI 轮播图组件 -->
 

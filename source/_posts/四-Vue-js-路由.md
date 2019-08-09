@@ -8,7 +8,7 @@ categories: Vue系列学习笔记
 
 ## 父组件向子组件传值
 1. 组件实例定义方式，注意：一定要使用`props`属性来定义父组件传递过来的数据
-```
+```js
 <script>
     // 创建 Vue 实例，得到 ViewModel
     var vm = new Vue({
@@ -26,7 +26,7 @@ categories: Vue系列学习笔记
   </script>
 ```
 2. 使用`v-bind`或简化指令，将数据传递到子组件中：
-```
+```html
 <div id="app">
     <son :finfo="msg"></son>
   </div>
@@ -35,11 +35,11 @@ categories: Vue系列学习笔记
 ## 子组件向父组件传值
 1. 原理：父组件将方法的引用，传递到子组件内部，子组件在内部调用父组件传递过来的方法，同时把要发送给父组件的数据，在调用方法的时候当作参数传递进去；
 2. 父组件将方法的引用传递给子组件，其中，`getMsg`是父组件中`methods`中定义的方法名称，`func`是子组件调用传递过来方法时候的方法名称
-```
+```html
 <son @func="getMsg"></son>
 ```
 3. 子组件内部通过`this.$emit('方法名', 要传递的数据)`方式，来调用父组件中的方法，同时把数据传递给父组件使用
-```
+```html
 <div id="app">
     <!-- 引用父组件 -->
     <son @func="getMsg"></son>
@@ -82,7 +82,7 @@ categories: Vue系列学习笔记
 目标：主要练习父子组件之间传值
 
 ## 使用 `this.$refs` 来获取元素和组件
-```
+```html
   <div id="app">
     <div>
       <input type="button" value="获取元素内容" @click="getElement" />
@@ -130,23 +130,23 @@ categories: Vue系列学习笔记
 
 ## 在 vue 中使用 vue-router
 1. 导入 vue-router 组件类库：
-```
+```html
 <!-- 1. 导入 vue-router 组件类库 -->
   <script src="./lib/vue-router-2.7.0.js"></script>
 ```
 2. 使用 router-link 组件来导航
-```
+```html
 <!-- 2. 使用 router-link 组件来导航 -->
 <router-link to="/login">登录</router-link>
 <router-link to="/register">注册</router-link>
 ```
 3. 使用 router-view 组件来显示匹配到的组件
-```
+```html
 <!-- 3. 使用 router-view 组件来显示匹配到的组件 -->
 <router-view></router-view>
 ```
 4. 创建使用`Vue.extend`创建组件
-```
+```js
     // 4.1 使用 Vue.extend 来创建登录组件
     var login = Vue.extend({
       template: '<h1>登录组件</h1>'
@@ -158,7 +158,7 @@ categories: Vue系列学习笔记
     });
 ```
 5. 创建一个路由 router 实例，通过 routers 属性来定义路由匹配规则
-```
+```js
 // 5. 创建一个路由 router 实例，通过 routers 属性来定义路由匹配规则
     var router = new VueRouter({
       routes: [
@@ -168,7 +168,7 @@ categories: Vue系列学习笔记
     });
 ```
 6. 使用 router 属性来使用路由规则
-```
+```js
 // 6. 创建 Vue 实例，得到 ViewModel
     var vm = new Vue({
       el: '#app',
@@ -186,18 +186,18 @@ categories: Vue系列学习笔记
 
 ## 在路由规则中定义参数
 1. 在规则中定义参数：
-```
+```js
 { path: '/register/:id', component: register }
 ```
 2. 通过 `this.$route.params`来获取路由中的参数：
-```
+```js
 var register = Vue.extend({
       template: '<h1>注册组件 --- {{this.$route.params.id}}</h1>'
     });
 ```
 
 ## 使用 `children` 属性实现路由嵌套
-```
+```html
   <div id="app">
     <router-link to="/account">Account</router-link>
 
@@ -255,7 +255,7 @@ var register = Vue.extend({
 
 ## 命名视图实现经典布局
 1. 标签代码结构：
-```
+```html
 <div id="app">
     <router-view></router-view>
     <div class="content">
@@ -265,7 +265,7 @@ var register = Vue.extend({
   </div>
 ```
 2. JS代码：
-```
+```js
 <script>
     var header = Vue.component('header', {
       template: '<div class="header">header</div>'
@@ -302,7 +302,7 @@ var register = Vue.extend({
   </script>
 ```
 3. CSS 样式：
-```
+```css
   <style>
     .header {
       border: 1px solid red;
@@ -328,7 +328,7 @@ var register = Vue.extend({
 考虑一个问题：想要实现 `名` 和 `姓` 两个文本框的内容改变，则全名的文本框中的值也跟着改变；（用以前的知识如何实现？？？）
 
 1. 监听`data`中属性的改变：
-```
+```html
 <div id="app">
     <input type="text" v-model="firstName"> +
     <input type="text" v-model="lastName"> =
@@ -357,7 +357,7 @@ var register = Vue.extend({
   </script>
 ```
 2. 监听路由对象的改变：
-```
+```html
 <div id="app">
     <router-link to="/login">登录</router-link>
     <router-link to="/register">注册</router-link>
@@ -400,7 +400,7 @@ var register = Vue.extend({
 
 ## `computed`计算属性的使用
 1. 默认只有`getter`的计算属性：
-```
+```html
 <div id="app">
     <input type="text" v-model="firstName"> +
     <input type="text" v-model="lastName"> =
@@ -425,7 +425,7 @@ var register = Vue.extend({
   </script>
 ```
 2. 定义有`getter`和`setter`的计算属性：
-```
+```html
 <div id="app">
     <input type="text" v-model="firstName">
     <input type="text" v-model="lastName">
