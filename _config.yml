@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: TUDOUBLOG
-subtitle:
+title: 土豆部落
+subtitle: imtudou.cn
 description: 站在巨人的肩膀上！
 keywords:
-author: imtudou
+author: 无敌小土豆
 language: zh-CN
 timezone:
 
@@ -92,3 +92,11 @@ search:
  format: html
  limit: 10000
  content: true
+
+ 
+feed: # RSS订阅插件
+  type: atom
+  path: atom.xml
+  limit: 0
+
+plugins: hexo-generate-feed
