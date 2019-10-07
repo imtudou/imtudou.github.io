@@ -47,6 +47,15 @@ webpack 是前端的一个项目构建工具，它是基于 Node.js 开发出来
 2. 创建项目基本的目录结构
 3. 使用`cnpm i jquery --save`安装jquery类库
 4. 创建`main.js`并书写各行变色的代码逻辑：
+
+
+```
+npm init -y       --初始化项目结构
+npm i jquery -s   --安装jquery
+
+```
+
+
 ```js
 	// 导入jquery类库
     import $ from 'jquery'
