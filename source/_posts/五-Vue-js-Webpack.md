@@ -42,6 +42,20 @@ webpack 是前端的一个项目构建工具，它是基于 Node.js 开发出来
 1. 运行`npm i webpack -g`全局安装webpack，这样就能在全局使用webpack的命令
 2. 在项目根目录中运行`npm i webpack --save-dev`安装到项目依赖中
 
+
+```
+注意:在webpack 4.x 中
+
+mkdir webpack-demo
+cd webpack-demo
+npm i jquery -s   --安装jquery
+npm init -y       --初始化项目结构
+npm install webpack --save-dev
+npm install webpack-cli --save-dev
+
+https://webpack.js.org/guides/getting-started/
+```
+
 ## 初步使用webpack打包构建列表隔行变色案例
 1. 运行`npm init`初始化项目，使用npm管理项目中的依赖包
 2. 创建项目基本的目录结构
@@ -49,11 +63,7 @@ webpack 是前端的一个项目构建工具，它是基于 Node.js 开发出来
 4. 创建`main.js`并书写各行变色的代码逻辑：
 
 
-```
-npm init -y       --初始化项目结构
-npm i jquery -s   --安装jquery
 
-```
 
 
 ```js
