@@ -34,10 +34,10 @@ custom_file_path:
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
+  small: /images/favicon-tudou-16.png
+  medium: /images/favicon-tudou-32.png
   apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
+  safari_pinned_tab: /images/favicon-tudou-32.png
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
@@ -47,7 +47,7 @@ rss:
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
-  #since: 2015
+  since: 2017
 
   # Icon between year and copyright info.
   icon:
@@ -151,7 +151,7 @@ baidu_push: false
 # External url should start with http:// or https://
 menu:
   home: / || home
-  tags: /tags/ || tags
+  # tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
   about: /about/ || user
@@ -191,7 +191,7 @@ site_state: true
 # Value after `||` delimiter is the name of Font Awesome icon. If icon (with or without delimiter) is not specified, globe icon will be loaded.
 social:
   GitHub: https://github.com/imtudou || github
-  E-Mail: mailto:imtudou@163.com || imtudou@163.com
+  E-Mail: mailto:imtudou@163.com ||  E-Mail
   知乎: https://www.zhihu.com/people/yuanyisoft || 知乎
   博客园: https://www.cnblogs.com/imtudou || 博客园
   # Google: https://plus.google.com/yourname || google
@@ -267,9 +267,9 @@ sidebar:
 back2top:
   enable: true
   # Back to top in sidebar.
-  sidebar: false
+  sidebar: true
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
 # A button to open designated chat widget in sidebar.
 # Firstly, you need enable the chat service you want to activate its sidebar button.
@@ -358,7 +358,7 @@ reward_settings:
   comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
 
 reward:
-  wechatpay: /images/wechatpay.jpg
+  wechatpay: /images/wechatpay.png
   alipay: /images/alipay.png  
   # bitcoin: /images/bitcoin.png
 
@@ -407,7 +407,7 @@ custom_logo:
 # Code Highlight theme
 # Available values: normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night bright
 
 # Enable "cheers" for archive page.
 cheers: true
@@ -593,7 +593,7 @@ calendar:
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname:
   count: true
   lazyload: false
@@ -639,20 +639,22 @@ valine:
 # You can get your uid from https://livere.com/insight/myCode (General web site)
 livere_uid: # <your_uid>
 
+
 # Gitalk
 # Demo: https://gitalk.github.io
 gitalk: 
   enable: true
   github_id: imtudou # GitHub repo owner
   repo: imtudou.github.io.gitalk # Repository name to store issues
-  client_id: a0614871c78247b74881 # GitHub Application Client ID
-  client_secret: 32dd2192910eb0da6e217dff10c5f281ab3ad21e # GitHub Application Client Secret
+  client_id: 81a31c84d684438bdf00 # GitHub Application Client ID
+  client_secret: e6c0f73e331a41098ec6d7afd08c3b83f20cec84 # GitHub Application Client Secret
   admin_user: imtudou # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
   language: zh-CN
+
 
 
 # ---------------------------------------------------------------
@@ -681,7 +683,6 @@ likely:
     telegram: Send
     whatsapp: Send
     pinterest: Pin
-   
 
 # NeedMoreShare2
 # Dependencies: https://github.com/theme-next/theme-next-needmoreshare2
@@ -698,14 +699,14 @@ needmoreshare2:
     options:
       iconStyle: default
       boxForm: horizontal
-      position: Right
+      position: bottomCenter
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
   float:
     enable: false
     options:
       iconStyle: box
       boxForm: horizontal
-      position: middleRight 
+      position: middleRight
       networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
 
 
@@ -715,7 +716,7 @@ needmoreshare2:
 # ---------------------------------------------------------------
 
 # Baidu Analytics
-baidu_analytics: 39d65a723bc42f98cd7374c7e0a17c0a # <app_id>
+baidu_analytics: # <app_id>
 
 # Growingio Analytics
 # Copyright 2015-2018 GrowingIO, Inc. More info available at https://www.growingio.com
@@ -957,7 +958,7 @@ pace: true
 # pace-theme-big-counter | pace-theme-bounce | pace-theme-barber-shop | pace-theme-center-atom
 # pace-theme-center-circle | pace-theme-center-radar | pace-theme-center-simple | pace-theme-corner-indicator
 # pace-theme-fill-left | pace-theme-flash | pace-theme-loading-bar | pace-theme-mac-osx | pace-theme-minimal
-pace_theme: pace-theme-center-radar 
+pace_theme: pace-theme-minimal 
 
 # Canvas-nest
 # Dependencies: https://github.com/theme-next/theme-next-canvas-nest
@@ -1138,12 +1139,12 @@ vendors:
   # gitalk & js-md5
   # See: https://github.com/gitalk/gitalk, https://github.com/emn178/js-md5
   # Example:
-  gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
-  gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
-  md5: //cdn.jsdelivr.net/npm/js-md5@0/src/md5.min.js
-  # gitalk_js:
-  # gitalk_css:
-  # md5:
+  # gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
+  # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
+  # md5: //cdn.jsdelivr.net/npm/js-md5@0/src/md5.min.js
+  gitalk_js:
+  gitalk_css:
+  md5:
 
   # likely
   # See: https://github.com/ilyabirman/Likely
