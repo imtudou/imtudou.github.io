@@ -1,4 +1,5 @@
 ### HEXO + GITHUB 搭建个人博客相关描述
++ 首先 `npm install hexo --save` 
 + hexo 分支为博客源码库
 + master 为通过 ```hexo d```命令发布到```xxx.github.io```仓库里的是发布文件
 

@@ -25,10 +25,10 @@ categories: 随笔
 
 #### 配置SSH
 生成SSH 密钥
-![n5Le0.png](https://ww1.yunjiexi.club/2019/07/29/n5Le0.png)
+![n5Le0.png](HEXO-GITHUB-搭建个人博客/images/n5Le0.png)
 
 添加SSH 密钥
-![n5xJp.png](https://ww1.yunjiexi.club/2019/07/29/n5xJp.png)
+![n5xJp.png](HEXO-GITHUB-搭建个人博客/images/n5xJp.png)
 
 #### 绑定域名
 当然，你不绑定域名肯定也是可以的，就用默认的 xxx.github.io 来访问，如果你想更个性一点，就直接在阿里云上买一个域名就可以了。
@@ -38,7 +38,7 @@ categories: 随笔
 CNAME和A记录，CNAME填写域名，A记录填写IP，由于不带www方式只能采用A记录，所以必须先ping一下你的用户名`.github.io`的IP，然后到你的域名DNS设置页，将A记录指向你ping出来的IP,将CNAME指向你的`xxx.github.io`，这样可以保证无论是否添加www都可以访问，如图
 
 域名解析
-![n5ZyE.png](https://ww1.yunjiexi.club/2019/07/29/n5ZyE.png)
+![n5ZyE.png](HEXO-GITHUB-搭建个人博客/images/n5ZyE.png)
 
 
 
@@ -143,10 +143,10 @@ categories: 随笔
 - 创建分支（在`xxx.github.io`仓库下操作）
 
   1.创建分支
-  ![n5aqe.png](https://ww1.yunjiexi.club/2019/07/29/n5aqe.png)
+  ![n5aqe.png](HEXO-GITHUB-搭建个人博客/images/n5aqe.png)
 
   2.将分支设置成默认
-  ![n5hwg.png](https://ww1.yunjiexi.club/2019/07/29/n5hwg.png)
+  ![n5hwg.png](HEXO-GITHUB-搭建个人博客/images/n5hwg.png)
   
   
 
